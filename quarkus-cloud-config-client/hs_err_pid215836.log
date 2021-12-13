@@ -1,0 +1,212 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes for Failed to commit area from 0x0000000082000000 to 0x0000000089e00000 of length 132120576.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3311), pid=215836, tid=198740
+#
+# JRE version:  (11.0.12+6) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.12+6-jvmci-20.3-b20, mixed mode, sharing, tiered, jvmci, jvmci compiler, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct -XX:-UnlockExperimentalVMOptions -XX:ThreadPriorityPolicy=1 -Xverify:none -Dio.quarkus.force-color-support=true -Dquarkus-internal.serialized-app-model.path=D:\tmp\hispam\spring-cloud-config-quickstart\target\quarkus\bootstrap\dev-app-model.dat -javaagent:C:\Users\ndigrazia\.m2\repository\io\quarkus\quarkus-class-change-agent\2.5.2.Final\quarkus-class-change-agent-2.5.2.Final.jar -agentlib:jdwp=transport=dt_socket,address=localhost:5005,server=y,suspend=n -Djava.util.logging.manager=org.jboss.logmanager.LogManager D:\tmp\hispam\spring-cloud-config-quickstart\target\spring-cloud-config-quickstart-dev.jar
+
+Host: Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 17763 (10.0.17763.1879)
+Time: Mon Dec 13 14:24:04 2021 Hora estándar de Argentina elapsed time: 0.056886 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000020396345800):  JavaThread "Unknown thread" [_thread_in_vm, id=198740, stack(0x000000ef89c00000,0x000000ef89d00000)]
+
+Stack: [0x000000ef89c00000,0x000000ef89d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x61feea]
+V  [jvm.dll+0x759b3e]
+V  [jvm.dll+0x75b20f]
+V  [jvm.dll+0x75b8d3]
+V  [jvm.dll+0x240788]
+V  [jvm.dll+0x61d11a]
+V  [jvm.dll+0x611bd5]
+V  [jvm.dll+0x2f8f6c]
+V  [jvm.dll+0x2f8df2]
+V  [jvm.dll+0x2fdb16]
+V  [jvm.dll+0x34294f]
+V  [jvm.dll+0x342380]
+V  [jvm.dll+0x2d60d8]
+V  [jvm.dll+0x2d7236]
+V  [jvm.dll+0x734fb7]
+V  [jvm.dll+0x73688f]
+V  [jvm.dll+0x34f6c9]
+V  [jvm.dll+0x717fc0]
+V  [jvm.dll+0x3b788f]
+V  [jvm.dll+0x3b9d81]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x2268a]
+C  [KERNEL32.DLL+0x17974]
+C  [ntdll.dll+0x5a2f1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000203944cc910, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002039635e000 GCTaskThread "GC Thread#0" [stack: 0x000000ef89d00000,0x000000ef89e00000] [id=220348]
+  0x000002039638e000 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000ef89e00000,0x000000ef89f00000] [id=218752]
+  0x000002039638f800 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000ef89f00000,0x000000ef8a000000] [id=221120]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd1c0a57c7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000020396342970] Heap_lock - owner thread: 0x0000020396345800
+
+Heap address: 0x0000000082000000, size: 2016 MB, Compressed Oops mode: Non-zero based: 0x0000000082000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.040 Loaded shared library D:\software\graalvm-ce-java11-20.3.3\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff6d1900000 - 0x00007ff6d190d000 	D:\software\graalvm-ce-java11-20.3.3\bin\java.EXE
+0x00007ffd65b50000 - 0x00007ffd65d3d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffd63370000 - 0x00007ffd63423000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffd61f60000 - 0x00007ffd621f5000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffd62200000 - 0x00007ffd622fa000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffd59910000 - 0x00007ffd59925000 	D:\software\graalvm-ce-java11-20.3.3\bin\VCRUNTIME140.dll
+0x00007ffd5f150000 - 0x00007ffd5f167000 	D:\software\graalvm-ce-java11-20.3.3\bin\jli.dll
+0x00007ffd64db0000 - 0x00007ffd64f47000 	C:\Windows\System32\USER32.dll
+0x00007ffd62300000 - 0x00007ffd62320000 	C:\Windows\System32\win32u.dll
+0x00007ffd62eb0000 - 0x00007ffd62ed9000 	C:\Windows\System32\GDI32.dll
+0x00007ffd61c10000 - 0x00007ffd61dac000 	C:\Windows\System32\gdi32full.dll
+0x00007ffd61e60000 - 0x00007ffd61f00000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffd44a00000 - 0x00007ffd44c79000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.1935_none_de70702c534c0c76\COMCTL32.dll
+0x00007ffd65950000 - 0x00007ffd659ee000 	C:\Windows\System32\msvcrt.dll
+0x00007ffd65110000 - 0x00007ffd6543d000 	C:\Windows\System32\combase.dll
+0x00007ffd62d80000 - 0x00007ffd62e9f000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffd61de0000 - 0x00007ffd61e5f000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffd63330000 - 0x00007ffd6335e000 	C:\Windows\System32\IMM32.DLL
+0x00007ffd501d0000 - 0x00007ffd50203000 	C:\Program Files (x86)\Panda Security\WAC\PSNMVHookMS64.dll
+0x00007ffd62f80000 - 0x00007ffd62fd2000 	C:\Windows\System32\SHLWAPI.dll
+0x00007ffd63360000 - 0x00007ffd63368000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffd4ff30000 - 0x00007ffd4ffcd000 	C:\Program Files (x86)\Panda Security\WAC\PSNMVTools64.dll
+0x00007ffd65a70000 - 0x00007ffd65b13000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffd62ee0000 - 0x00007ffd62f7e000 	C:\Windows\System32\sechost.dll
+0x00007ffd64fb0000 - 0x00007ffd65106000 	C:\Windows\System32\ole32.dll
+0x00007ffd60ad0000 - 0x00007ffd60b01000 	C:\Windows\SYSTEM32\ntmarta.dll
+0x00007ffd4fec0000 - 0x00007ffd4ff30000 	C:\Program Files (x86)\Panda Security\WAC\PSNMVComm64.dll
+0x00007ffd5a000000 - 0x00007ffd5a014000 	C:\Program Files (x86)\Panda Security\WAC\PSNMVHookPlg64.dll
+0x00007ffd25f40000 - 0x00007ffd25fdb000 	D:\software\graalvm-ce-java11-20.3.3\bin\msvcp140.dll
+0x00007ffd1bdc0000 - 0x00007ffd1c8cf000 	D:\software\graalvm-ce-java11-20.3.3\bin\server\jvm.dll
+0x00007ffd5e7b0000 - 0x00007ffd5e7d4000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffd59d20000 - 0x00007ffd59d2a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffd5e780000 - 0x00007ffd5e7ad000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffd48cb0000 - 0x00007ffd48cb9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffd62a70000 - 0x00007ffd62aba000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffd62fe0000 - 0x00007ffd6304d000 	C:\Windows\System32\ws2_32.DLL
+0x00007ffd61ba0000 - 0x00007ffd61bb1000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffd59900000 - 0x00007ffd59910000 	D:\software\graalvm-ce-java11-20.3.3\bin\verify.dll
+0x00007ffd604c0000 - 0x00007ffd606ad000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffd48e40000 - 0x00007ffd48e6a000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffd598c0000 - 0x00007ffd598e8000 	D:\software\graalvm-ce-java11-20.3.3\bin\java.dll
+0x00007ffd59830000 - 0x00007ffd5983a000 	D:\software\graalvm-ce-java11-20.3.3\bin\jimage.dll
+0x00007ffd593e0000 - 0x00007ffd593ee000 	D:\software\graalvm-ce-java11-20.3.3\bin\instrument.dll
+0x00007ffd4a180000 - 0x00007ffd4a1b8000 	D:\software\graalvm-ce-java11-20.3.3\bin\jdwp.dll
+0x00007ffd57540000 - 0x00007ffd57557000 	D:\software\graalvm-ce-java11-20.3.3\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;D:\software\graalvm-ce-java11-20.3.3\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.1935_none_de70702c534c0c76;C:\Program Files (x86)\Panda Security\WAC;D:\software\graalvm-ce-java11-20.3.3\bin\server
+
+VM Arguments:
+jvm_args: -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct -XX:-UnlockExperimentalVMOptions -XX:ThreadPriorityPolicy=1 -Xverify:none -Dio.quarkus.force-color-support=true -Dquarkus-internal.serialized-app-model.path=D:\tmp\hispam\spring-cloud-config-quickstart\target\quarkus\bootstrap\dev-app-model.dat -javaagent:C:\Users\ndigrazia\.m2\repository\io\quarkus\quarkus-class-change-agent\2.5.2.Final\quarkus-class-change-agent-2.5.2.Final.jar -agentlib:jdwp=transport=dt_socket,address=localhost:5005,server=y,suspend=n -Djava.util.logging.manager=org.jboss.logmanager.LogManager 
+java_command: D:\tmp\hispam\spring-cloud-config-quickstart\target\spring-cloud-config-quickstart-dev.jar
+java_class_path (initial): D:\tmp\hispam\spring-cloud-config-quickstart\target\spring-cloud-config-quickstart-dev.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     bool BytecodeVerificationLocal                = false                                     {product} {command line}
+     bool BytecodeVerificationRemote               = false                                     {product} {command line}
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     bool EnableJVMCIProduct                       = true                                {JVMCI product} {jimage}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2113929216                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 164854010                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 164854010                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 335544320                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx ThreadPriorityPolicy                     = 1                                         {product} {jimage}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=D:\software\graalvm-ce-java11-20.3.3
+CLASSPATH=C:\Program Files (x86)\Teradata\Client\14.00\JMSAXSMOD\;C:\Program Files (x86)\Teradata\Client\14.00\JMSAXSMOD\jmsam.jar
+PATH=D:\software\Java\jdk-13.0.2\bin;C:\Program Files (x86)\Teradata\Client\14.00\AXSMOD\;D:\software\curl-7.78.0-win64-mingw\bin;C:\Program Files (x86)\Teradata\client\14.00\Teradata Parallel Transporter\bin;C:\Program Files (x86)\Teradata\client\14.00\Teradata Parallel Transporter\msg;C:\Program Files\Teradata\client\14.00\Teradata Parallel Transporter\bin64;C:\Program Files\Teradata\client\14.00\Teradata Parallel Transporter\msg64;C:\Program Files (x86)\Teradata\Client\14.00\pp2\;C:\Program Files\Teradata\Client\14.00\pp2_64\;C:\Program Files\Teradata\Client\14.00\bin64\;C:\Program Files (x86)\Teradata\Client\14.00\AXSMOD\;C:\Program Files\Teradata\Client\14.00\AXSMOD\;C:\Program Files (x86)\Teradata\Client\14.00\bin\;C:\Program Files\Teradata\Client\14.00\bin\;C:\Program Files (x86)\Teradata\Client\14.00\CLIv2\;C:\Program Files\Teradata\Client\14.00\CLIv2\;C:\Program Files (x86)\Teradata\Client\14.00\ODBC Driver for Teradata\Lib\;C:\Program Files\Teradata\Client\14.00\ODBC Driver for Teradata nt-x8664\Lib\;d:\minikube;D:\software\Minikube;D:\software\gradle\gradle-7.3-bin;D:\software\kamel;C:\Users\ndigrazia\go\bin;D:\software\minishift-1.16.0-windows-amd64;D:\software\apache-maven-3.6.3\bin;C:\Users\ndigrazia\AppData\Local\Microsoft\WindowsApps;C:\Users\ndigrazia\AppData\Roaming\npm;D:\software\texlive\2020\bin\win32;D:\software\python-3.8.3-embed-amd64;D:\software\VSCode-win32-x64-1.42.1;D:\software\Git\bin;D:\software\oc;D:\software\Microsoft VS Code\bin;D:\software\HashiCorp\Vagrant\bin;C:\Users\ndigrazia\.deno\bin;D:\software\heroku\bin;D:\software\graalvm-ce-java11-20.3.3\bin;C:\Windows\System32\WindowsPowerShell\v1.0;D:\software\gradle\gradle-7.3-bin\gradle-7.3\bin;C:\WINDOWS\system32;
+USERNAME=NDIGRAZIA
+LANG=es_ES.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 17763 (10.0.17763.1879)
+OS uptime: 13 days 15:00 hours
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12 microcode 0xb8, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 8062M (378M free)
+TotalPageFile size 19391M (AvailPageFile size 117M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 92M, peak: 218M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.12+6-jvmci-20.3-b20) for windows-amd64 JRE (11.0.12+6-jvmci-20.3-b20), built on Jul 18 2021 10:40:18 by "" with unknown MS VC++:1916
+
+END.
