@@ -1,4 +1,4 @@
-# Cloud Config Server
+# Spring Cloud Config Server
 
 This guide explains how you can configure your Spring Cloud Server. See https://cloud.spring.io/spring-cloud-config/reference/html/
 
