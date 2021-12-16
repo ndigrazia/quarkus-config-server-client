@@ -96,7 +96,7 @@ This will add the following to your pom.xml:
 </dependency>
 ```
 
-## Cpntroller
+## Controller
 
 Update the code to:
 
